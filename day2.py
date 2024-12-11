@@ -1,6 +1,5 @@
 from my_lib import get_input
 
-#TODO - Find bug. Code appears to work correctly but produces an answer that is too low.
 def main():
     input = get_input()
     reports = input.split("\n")
@@ -48,12 +47,12 @@ def is_safe(str):
 
 def problem_dampener(str):
     items = str.split()
-    for i in items:
+    for i in range(len(items)):
         items = str.split()
-        items.remove(i)
+        items.pop(i)
         items = ' '.join(items)
         if is_safe(items):
-            # print(f"Report {str} is safe via dampener!")
+            print(f"Report {str} is safe via dampener!")
             return True
 
 
